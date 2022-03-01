@@ -6,13 +6,12 @@ import React, {
   ButtonHTMLAttributes,
 } from 'react';
 
+import { ButtonProps } from '../Button';
 import Spinner from '../Spinner';
 
-import { Container, ContainerProps } from './styles';
+import { Container } from './styles';
 
-interface ButtonLoadingProps
-  extends ButtonHTMLAttributes<HTMLButtonElement>,
-    ContainerProps {
+interface ButtonLoadingProps extends ButtonProps {
   children: React.ReactNode;
   className?: string;
 }
@@ -24,7 +23,7 @@ export interface ButtonLoadingHandles {
 const ButtonLoading: React.ForwardRefRenderFunction<
   ButtonLoadingHandles,
   ButtonLoadingProps
-> = ({ className = '', children, ...rest }, ref) => {
+> = ({ className = '', children, disabled, ...rest }, ref) => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const handleSetIsLoading = useCallback(() => {
@@ -38,7 +37,12 @@ const ButtonLoading: React.ForwardRefRenderFunction<
   });
 
   return (
-    <Container type="button" className={className} {...rest}>
+    <Container
+      type="button"
+      className={className}
+      disabled={disabled || isLoading}
+      {...rest}
+    >
       {isLoading ? <Spinner sizeIcon={20} /> : children}
     </Container>
   );
