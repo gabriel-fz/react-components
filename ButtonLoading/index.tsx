@@ -2,8 +2,7 @@ import React, {
   forwardRef,
   useImperativeHandle,
   useState,
-  useCallback,
-  ButtonHTMLAttributes,
+  useCallback
 } from 'react';
 
 import { ButtonProps } from '../Button';
