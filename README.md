@@ -10,10 +10,13 @@ Estrutura básica de componentes feitos com styped-components para serem reutili
 - Adicione a biblioteca [styled-components](https://styled-components.com/) aos seu projeto (caso não tenha)
 - faça as modificações necessárias de estrutura e/ou estilização no `index.tsx` e/ou no `styles.ts`
 
-**OBS:** Caso não queira utilizar a biblioteca styled-components, basta alterar a forma de estilização dos componentes.
+**OBS 1:** Caso não queira utilizar a biblioteca styled-components, basta alterar a forma de estilização dos componentes.
+
+**OBS 2:** Alguns componentes deste projeto podem utilizar um ou mais componententes também presentes neste projeto.
 
 ### Componentes neste projeto:
 
+- [Button](./Button)
 - [ButtonLoading](./ButtonLoading)
 - [Spinner](./Spinner)
 
